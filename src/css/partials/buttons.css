@@ -1,0 +1,53 @@
+﻿/* -------------------------------------------------------- */
+/* --- 12. Responsives Button-Layout --- */
+/* Buttons automatisch umbrechen und gleichmässig verteilen. */
+/* with tgb.layout(columns="1 1 1 1 1", columns__mobile="1", class_name="p0 button-wrap"): */
+.button-wrap {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)) !important;
+    gap: 0.5rem;
+    align-items: stretch;
+}
+
+.button-wrap > * {
+    min-width: 0;
+    height: 100%;
+}
+
+.button-wrap .fullwidth {
+    width: 100% !important;
+}
+
+.button-wrap .MuiButton-root,
+.button-wrap .MuiButtonBase-root,
+.button-wrap .taipy-button {
+    height: 100%;
+    line-height: 1.5 !important;
+    padding: 6px 6px !important;
+    white-space: normal;
+    text-align: center;
+}
+
+/* Leichte Grundfärbung für Buttons innerhalb von .button-wrap. */
+.button-wrap .MuiButton-root:not(:hover):not(.Mui-disabled),
+.button-wrap .MuiButtonBase-root:not(:hover):not(.Mui-disabled),
+.button-wrap .taipy-button:not(:hover):not(.Mui-disabled) {
+    background-color: color-mix(in srgb, var(--color-primary, #ff6049) 2%, transparent) !important;
+}
+
+/* -------------------------------------------------------- */
+
+/* --- 12b. Optionale Button-Grundfarbe per Klasse --- */
+/* Klasse direkt am Button oder an einem Wrapper setzen. */
+/* tgb.button(label="Verstanden & akzeptiert", on_action=accept_disclaimer, class_name="fullwidth button-color-accent") */
+.button-color-accent .MuiButton-root:not(:hover):not(.Mui-disabled),
+.button-color-accent .MuiButtonBase-root:not(:hover):not(.Mui-disabled),
+.button-color-accent .taipy-button:not(:hover):not(.Mui-disabled),
+.button-color-accent.MuiButton-root:not(:hover):not(.Mui-disabled),
+.button-color-accent.MuiButtonBase-root:not(:hover):not(.Mui-disabled),
+.button-color-accent.taipy-button:not(:hover):not(.Mui-disabled) {
+    background-color: color-mix(in srgb, var(--color-primary, #ff6049) 2%, transparent) !important;
+}
+
+/* -------------------------------------------------------- */
+/* -------------------------------------------------------- */

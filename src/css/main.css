@@ -1,0 +1,15 @@
+﻿/* -------------------------------------------------------- */
+/* --- Einstiegsdatei fuer Taipy: hier werden die Teil-CSS eingebunden. --- */
+@import "partials/inputs.css";
+@import "partials/tooltips.css";
+@import "partials/text-spacing.css";
+@import "partials/docs-and-iframes.css";
+@import "partials/watermarks.css";
+@import "partials/expandable-and-tables.css";
+@import "partials/buttons.css";
+@import "partials/theme-toggle.css";
+@import "partials/card-inner.css";
+@import "partials/dialog-inner.css";
+@import "partials/pane-layout.css";
+@import "partials/links.css";
+/* -------------------------------------------------------- */

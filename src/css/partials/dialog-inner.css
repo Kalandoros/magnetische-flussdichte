@@ -1,0 +1,36 @@
+﻿/* -------------------------------------------------------- */
+/* --- 16. Hintergrund für Dialog-Inner --- */
+/* Dialoge per Klasse farblich absetzen, analog zu card-inner. */
+/* with tgb.dialog(open="{show_disclaimer}", title="Haftungsausschluss / Disclaimer / Cookies", on_action=accept_disclaimer, class_name="dialog-inner"): */
+
+/* Fallback: gleiche Farbe wie Dialog-Paper, falls color-mix nicht unterstützt. */
+.dialog-inner,
+.dialog-inner .MuiDialog-paper,
+.dialog-inner .MuiPaper-root {
+    background-color: var(--color-paper) !important;
+}
+
+/* Stärkere Abstufung für bessere Sichtbarkeit in Light/Dark-Theme. */
+@supports (color: color-mix(in srgb, #000, #fff)) {
+    .dialog-inner,
+    .dialog-inner .MuiDialog-paper,
+    .dialog-inner .MuiPaper-root {
+        background-color: color-mix(
+            in srgb,
+            var(--color-paper) 65%,
+            var(--color-background) 35%
+        ) !important;
+    }
+}
+
+/* -------------------------------------------------------- */
+/* --- 16b. h4-Abstand im Dialog reduzieren --- */
+/* Abstände werden Nur oben/unten gesetzt, seitliche Abstände unverändert. */
+/* Wird automatisch angewendet bei Benutzung von h4 in Dialogen. */
+.dialog-inner h4 {
+    margin-top: 1em !important;
+    margin-bottom: 1em !important;
+}
+
+/* -------------------------------------------------------- */
+/* -------------------------------------------------------- */

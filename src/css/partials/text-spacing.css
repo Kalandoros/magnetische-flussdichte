@@ -1,0 +1,20 @@
+﻿/* -------------------------------------------------------- */
+/* --- 8a. Abstände unten (Text) --- */
+/* Abstände für Text-Elemente mit mb-* Klasse setzen. */
+.taipy-text.mb-4 {
+    display: block !important;
+    margin-top: 15px !important;
+    margin-bottom: 2px !important;
+}
+
+/* --- 8b. Abstände unten (Markdown) --- */
+/* Abstände für Absätze im Markdown-Text mit md-tight anpassen. */
+/* Wendet md-tight für alle hierarchisch darunterliegenden markdown Texte in diesen Part an. */
+/* with tgb.part(class_name="card p1 md-tight "): */
+.md-tight .taipy-text-markdown p {
+    margin-block-start: 0.5em !important;
+    margin-block-end: 0.5em !important;
+}
+
+/* -------------------------------------------------------- */
+/* -------------------------------------------------------- */

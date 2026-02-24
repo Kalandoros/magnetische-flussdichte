@@ -1,0 +1,173 @@
+﻿/* -------------------------------------------------------- */
+/* --- 9a. Reduzierte Breite für Markdown-HTML --- */
+/* Dokumentationsinhalt kompakt halten und Bilder skalieren. */
+.doc-card {
+    /* width: 80%; */
+    /* padding-top: 0px; */
+    margin-top: 0px !important;
+}
+
+.doc-card img {
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 900px) {
+    .doc-card {
+        width: 100%;
+    }
+
+    .doc-card img {
+        max-width: 100%;
+    }
+}
+
+/* -------------------------------------------------------- */
+
+/* --- 9b. Drittanbieter-iframe im Taipy-Stil (Doku) --- */
+/* Iframe-Container neutral halten und Scrolling verhindern. */
+.third-party-iframe-taipy-style-doku {
+    border: 0 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    overflow: hidden !important; /* Wichtig: Taipy-Container darf NICHT scrollen */
+    padding: 0px;
+}
+
+.third-party-iframe-taipy-style-doku iframe {
+    width: 100% !important;
+    height: 100% !important;
+    border: none !important;
+    display: block !important;
+    /* Hier keine Hintergrundfarben setzen, das macht der Iframe selbst */
+}
+
+/* --- 9b2. Drittanbieter-iframe im Pane (volle Höhe) --- */
+/* Variante für Pane-Inhalte, die den freien Platz füllt. */
+.third-party-iframe-taipy-style-pane {
+    border: 0 !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    overflow: hidden !important; /* Wichtig: Taipy-Container darf NICHT scrollen */
+    padding: 0px;
+    height: 100% !important;
+    min-height: 100% !important;
+    display: flex;
+    flex-direction: column;
+}
+
+.third-party-iframe-taipy-style-pane iframe {
+    width: 100% !important;
+    height: 100% !important;
+    border: none !important;
+    display: block !important;
+    flex: 1 1 auto;
+    /* Hier keine Hintergrundfarben setzen, das macht der Iframe selbst */
+}
+
+/* -------------------------------------------------------- */
+
+/* --- 9b3. Pane-Card ohne Abstand (optional) --- */
+/* Entfernt Innenabstände und füllt die Höhe im Pane. */
+.pane-card-fit {
+    padding: 0 0 0 2rem !important;
+    margin: 0 !important;
+    height: calc(100% - 41px) !important;
+    min-height: calc(100% - 41px) !important;
+    display: flex;
+    flex-direction: column;
+}
+
+.pane-card-fit > * {
+    flex: 1 1 auto;
+    min-height: 0;
+}
+
+/* -------------------------------------------------------- */
+
+/* --- 9c. Standard-iframe-Rahmen für Taipy-User-Content entfernen --- */
+/* Entfernt Rahmen und Schatten für eingebetteten Content. */
+iframe[src*="taipy-user-content"] {
+    border: 0 !important;
+    border-width: 0 !important;
+    border-style: none !important;
+    border-color: transparent !important;
+    outline: 0 !important;
+    box-shadow: none !important;
+    display: block !important;
+}
+
+.iframe[src*="taipy-user-content"] img {
+    max-width: 80%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 900px) {
+    .doc-card {
+        width: 100%;
+    }
+
+    .doc-card img {
+        max-width: 100%;
+    }}
+
+/* -------------------------------------------------------- */
+/* -------------------------------------------------------- */
+
+/* -------------------------------------------------------- */
+/* --- 9d. Viewport-Höhenhelfer (ohne Navbar, Doku) --- */
+/* Berechnet die Höhe ohne Navbar-Anteil. */
+:root {
+    --app-title-offset: 4.2rem;
+    --app-navbar-offset: 0rem;
+    --app-extra-offset: 9rem;
+}
+
+/* WICHTIG: Gibt die Höhe der Doku-Seite an, damit kein scrollen entsteht!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+.vh-fit-no-navbar-doku {
+    --app-navbar-offset: 0rem;
+    height: calc(100vh - var(--app-title-offset) - var(--app-extra-offset)) !important;
+}
+
+/* -------------------------------------------------------- */
+
+/* --- 9e. Viewport-Höhenhelfer (mit Navbar, Doku) --- */
+/* Berechnet die Höhe inklusive Navbar-Anteil. */
+.vh-fit-with-navbar-doku {
+    --app-navbar-offset: 3rem;
+    height: calc(100vh - var(--app-title-offset) - var(--app-navbar-offset) - var(--app-extra-offset)) !important;
+}
+
+/* --- 9e2. Viewport-Höhenhelfer (Pane, mit Navbar) --- */
+/* Mehr Platz im Pane, damit TOC nicht scrollt. */
+.vh-fit-with-navbar-pane {
+    --app-navbar-offset: 3rem;
+    --app-extra-offset: 5rem;
+    height: calc(
+        100vh
+        - var(--app-title-offset)
+        - var(--app-navbar-offset)
+        - var(--app-extra-offset)
+    ) !important;
+}
+
+/* --- 9d2. Viewport-Höhenhelfer (Pane, ohne Navbar) --- */
+/* Mehr Platz im Pane, damit TOC nicht scrollt. */
+.vh-fit-no-navbar-pane {
+    --app-navbar-offset: 0rem;
+    --app-extra-offset: 5rem;
+    height: calc(
+        100vh
+        - var(--app-title-offset)
+        - var(--app-extra-offset)
+    ) !important;
+}
+
+/* -------------------------------------------------------- */
+/* -------------------------------------------------------- */

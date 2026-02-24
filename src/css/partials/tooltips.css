@@ -1,0 +1,28 @@
+﻿/* -------------------------------------------------------- */
+/* --- 7. Tooltip- und Hover-Support --- */
+/* Tooltips sichtbar halten und Hover-Ereignisse erlauben. */
+/* Wird automatisch global angewendet. */
+
+/* Tooltips sichtbar halten und z-index setzen */
+.MuiTooltip-popper {
+    z-index: 9999 !important; /* Wichtig: Überdeckt alles darunter liegende */
+    pointer-events: auto !important;
+}
+
+.MuiTooltip-tooltip {
+    pointer-events: auto !important;
+    white-space: pre-line; /* Wichtig: Ermöglicht Zeilenumbrüche innerhalb des Tooltips mit \n */
+}
+
+/* Form-Controls dürfen Hover-Events auslösen */
+.input-with-unit .MuiFormControl-root {
+    pointer-events: auto !important;
+}
+
+/* Wrapper um Inputs darf Hover-Events durchlassen */
+.input-with-unit > div {
+    pointer-events: auto !important;
+}
+
+/* -------------------------------------------------------- */
+/* -------------------------------------------------------- */

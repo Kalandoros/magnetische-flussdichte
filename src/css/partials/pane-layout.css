@@ -1,0 +1,81 @@
+﻿/* -------------------------------------------------------- */
+/* --- 17. Pane-Layout (Seitenansicht) --- */
+/* Hauptinhalt und Pane nebeneinander anordnen. */
+/* with tgb.part(class_name="pane-layout"): */
+:root {
+    /* Einheitlicher Wert für Pane-Breite (muss zur tgb.pane width passen). */
+    --pane-width: 40%;
+}
+
+.pane-layout {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+}
+
+/* Abstand nur bei geöffnetem Pane, ohne Layout-Gap zu verwenden. */
+.pane-layout > .pane-side {
+    margin-left: 1rem;
+}
+
+/* Geschlossenes Pane (Button) bekommt keinen Abstand. */
+.pane-layout > .pane-side-button {
+    margin-left: 0;
+}
+
+/* Hauptinhalt der Seite und Pane nebeneinander anordnen. */
+/* with tgb.part(class_name="pane-main"): */
+.pane-main {
+    flex: 1 1 auto;
+    min-width: 0;
+    order: 1;
+}
+
+/* Pane auf der Seite rechts anordnen. */
+/* with tgb.pane(open=show_pane, persistent=True, show_button=True, anchor="right", width="40%", class_name="pane-side"): */
+.pane-side {
+    flex: 0 0 var(--pane-width);
+    max-width: var(--pane-width);
+    order: 2;
+}
+
+/* Beschriftung neben dem Pfeil-Button (geschlossenes Pane). */
+.pane-layout > .taipy-pane-button .MuiIconButton-root {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.30rem;
+}
+
+.pane-layout > .taipy-pane-button .MuiIconButton-root::after {
+    content: "Dokumentation";
+    font: inherit;
+    color: inherit;
+    letter-spacing: normal;
+    white-space: nowrap;
+    font-family: Lato, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+
+}
+
+/* Beschriftung neben dem Pfeil-Button (geöffnetes Pane). */
+.pane-layout > .taipy-pane .MuiIconButton-root {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.pane-layout > .taipy-pane .MuiIconButton-root::after {
+    content: "Dokumentation";
+    font: inherit;
+    color: inherit;
+    letter-spacing: normal;
+    white-space: nowrap;
+    font-family: Lato, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    /* font-size: 0.875rem;*/
+}
+
+/* -------------------------------------------------------- */
+/* -------------------------------------------------------- */

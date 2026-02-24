@@ -1,0 +1,8 @@
+numpy==2.3.3
+openpyxl==3.1.2
+pandas==2.2.2
+scipy==1.16.2
+sympy==1.14.0
+taipy==4.1.1
+markdown2==2.5.4
+latex2mathml==3.78.1

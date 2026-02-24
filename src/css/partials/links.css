@@ -1,0 +1,13 @@
+﻿/* -------------------------------------------------------- */
+/* --- 14. Globale Linkfarbe --- */
+/* Einheitliche Linkfarbe für alle Zustände. */
+/* Wird automatisch global angewendet. */
+a,
+a:visited,
+a:hover,
+a:active {
+    color: var(--color-primary, #ff6049) !important;
+}
+
+/* -------------------------------------------------------- */
+/* -------------------------------------------------------- */
